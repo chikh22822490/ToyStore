@@ -79,10 +79,10 @@ namespace ToyStore.Forms
         private void DGV_toys_SelectionChanged(object sender, EventArgs e)
         {
             SqlConnection con = null;
-
+            int id_prov = 0;
             try
             {
-                con = new SqlConnection(@"Data Source=DESKTOP-60KLJAJ;Initial Catalog=toybosDB;Integrated Security=True;Pooling=False");
+                con = new SqlConnection(@"Data Source=DESKTOP-60KLJAJ;Initial Catalog=toybosDB;Integrated Security=True;Pooling=False;MultipleActiveResultSets=True");
                 con.Open();
                 int index = dGV_toys.CurrentRow.Index;
                 int id_toy = int.Parse(dGV_toys.Rows[index].Cells[0].Value.ToString());
@@ -91,18 +91,19 @@ namespace ToyStore.Forms
                 cmd.CommandText = "select * from Toys where Id = " + id_toy;
                 cmd.Connection = con;
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if (reader.Read())
                 {
                     pic_img.SizeMode = PictureBoxSizeMode.StretchImage;
                     pic_img.ImageLocation = reader.GetString(5);
                     if (reader.GetString(9).Length != 0)
-                    { 
-                        txt_desc.Text = reader.GetString(9); 
+                    {
+                        txt_desc.Text = reader.GetString(9);
                     }
-                    else 
-                    { 
-                        txt_desc.Text = "No discription"; 
+                    else
+                    {
+                        txt_desc.Text = "No discription";
                     }
+                
 
                     txt_nom.Text = reader.GetString(1);
                     txt_prix.Text = reader.GetDouble(6).ToString();
@@ -110,9 +111,18 @@ namespace ToyStore.Forms
                     txt_stock.Text = reader.GetInt32(8).ToString();
                     txt_min.Value = reader.GetInt32(4);
                     txt_max.Value = reader.GetInt32(3);
-
+                    id_prov = reader.GetInt32(7);
                 }
                 reader.Close();
+
+                SqlCommand cmd2 = new SqlCommand();
+                cmd2.CommandText = "select Name from Provider where Id = " + id_prov;
+                cmd2.Connection = con;
+                SqlDataReader reader2 = cmd2.ExecuteReader();
+                reader2.Read();
+                cmb_provider.Text = reader2.GetString(0);
+                reader2.Close();
+                
 
             }
             catch (Exception ex)
@@ -172,7 +182,7 @@ namespace ToyStore.Forms
                         reader1.Close();
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandText = " UPDATE Toys SET Name=@nom ,Type=@type ,MaxAge=@max ,MinAge=@min ,Photo=@photo , Price=@prix , Provider =@fourni ,Stock=@stock ,Description=@Desc where Id=" + id_toy;
-                        cmd.Parameters.AddWithValue("@nom", txt_nom);
+                        cmd.Parameters.AddWithValue("@nom", txt_nom.Text);
                         cmd.Parameters.AddWithValue("@type", cmb_type.SelectedItem.ToString());
                         cmd.Parameters.AddWithValue("@max", txt_max.Value);
                         cmd.Parameters.AddWithValue("@min", txt_min.Value);
