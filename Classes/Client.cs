@@ -10,7 +10,7 @@ namespace ToyStore.Classes
 {
     class Client
     {
-        public static void sendEmail(string adressFrom, string adressTo, string password)
+        public static void sendEmail(string adressFrom, string adressTo,string password)
         {
             try
             {
@@ -21,10 +21,10 @@ namespace ToyStore.Classes
                 message.Subject = "New toys added to our store!";
                 message.Body = "You should check our new toy's collection, it too great";
                 smtp.Port = 587;
-                smtp.Host = "smtp.gmail.com";
+                smtp.Host = "gmail.com";
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential(adressFrom, password);
+                smtp.Credentials = new NetworkCredential(adressFrom,password);
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
             }

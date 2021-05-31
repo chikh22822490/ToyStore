@@ -143,6 +143,9 @@ namespace ToyStore.Forms
                     
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("toy added");
+
+                    //toujours echec d'envoyer un mail
+                    //Classes.Client.sendEmail("adresseFrom", "adressTo", "password");
                 }
                 catch (Exception ex)
                 {
