@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBEDA128-EA7D-4D55-8C38-B982A4EFF9A1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ToyStore</RootNamespace>
+    <AssemblyName>ToyStore</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Chart, Version=20.5.1.12, Culture=neutral, PublicKeyToken=2961c51bb98125d2, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Chart.ThinWeb, Version=20.5.1.12, Culture=neutral, PublicKeyToken=e35134330ba499ca, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Chart.ThinWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Chart.WebForm, Version=20.5.1.12, Culture=neutral, PublicKeyToken=346753153ef91008, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Chart.WebForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Chart.WinForm, Version=20.5.1.12, Culture=neutral, PublicKeyToken=c9bd8998e981e4ee, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Chart.WinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Chart.Wpf, Version=20.5.1.12, Culture=neutral, PublicKeyToken=1d109cb19821cc7d, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Chart.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Diagram, Version=20.5.1.12, Culture=neutral, PublicKeyToken=58d0c39aedb7cb73, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Diagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Diagram.Shapes, Version=20.5.1.12, Culture=neutral, PublicKeyToken=532a56b211affb14, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Diagram.Shapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Diagram.ThinWeb, Version=20.5.1.12, Culture=neutral, PublicKeyToken=68aed445f4a1ebb5, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Diagram.ThinWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Diagram.WebForm, Version=20.5.1.12, Culture=neutral, PublicKeyToken=95bcc3d41b0512e9, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Diagram.WebForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Diagram.WinForm, Version=20.5.1.12, Culture=neutral, PublicKeyToken=8232c9976c3abc48, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Diagram.WinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Examples.Framework.WebForm, Version=20.5.1.12, Culture=neutral, PublicKeyToken=9c5766f558c6f9aa, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Examples.Framework.WebForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Examples.Framework.WinForm, Version=20.5.1.12, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Examples.Framework.WinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.GraphicsGL, Version=20.5.1.12, Culture=neutral, PublicKeyToken=2f17c6a71f852d32, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.GraphicsGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Barcode, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Chart, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Diagram, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Diagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.GraphicsGL, Version=20.5.1.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\NevronOpenVision.2019.1.1\lib\net40\Nevron.Nov.GraphicsGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Grid, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Host.WinBase, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Host.WinBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Host.WinForm, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Host.WinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Host.Wpf, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Host.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Presentation, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Schedule, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.Text, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.WinFormControls, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.WinFormControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Nov.WpfControls, Version=17.5.29.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad, processorArchitecture=MSIL">
+      <HintPath>packages\Nevron.Nov.Grid.17.5.29.12\lib\net40\Nevron.Nov.WpfControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.Presentation, Version=20.5.1.12, Culture=neutral, PublicKeyToken=6656c5d1103e75cc, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.System, Version=20.5.1.12, Culture=neutral, PublicKeyToken=6a987feae5e496fd, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.System.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.ThinWeb, Version=20.5.1.12, Culture=neutral, PublicKeyToken=b08120edebea5ee3, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.ThinWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.UI.WebForm.Controls, Version=20.5.1.12, Culture=neutral, PublicKeyToken=b5bb1156a58c1618, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.UI.WebForm.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.UI.WinForm.Docking, Version=20.5.1.12, Culture=neutral, PublicKeyToken=446d8963349a628a, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.UI.WinForm.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Nevron.UI.WinForm.Skins, Version=20.5.1.12, Culture=neutral, PublicKeyToken=231d012f86497c6a, processorArchitecture=MSIL">
+      <HintPath>packages\NevronVision.2019.1.1\lib\net45\Nevron.UI.WinForm.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=3.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>packages\NevronOpenVision.2019.1.1\lib\net40\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Catalog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Catalog.Designer.cs" />
+    <Compile Include="Classes\Admin.cs" />
+    <Compile Include="Classes\Cashier.cs" />
+    <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\Program.cs" />
+    <Compile Include="Classes\Provider.cs" />
+    <Compile Include="Classes\Sale.cs" />
+    <Compile Include="Classes\Toy.cs" />
+    <Compile Include="Forms\AddProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddProvider.Designer.cs">
+      <DependentUpon>AddProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddToy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddToy.Designer.cs">
+      <DependentUpon>AddToy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminChoice.Designer.cs">
+      <DependentUpon>AdminChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BestCashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BestCashier.Designer.cs">
+      <DependentUpon>BestCashier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculator.Designer.cs">
+      <DependentUpon>Calculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cashier_choice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cashier_choice.Designer.cs">
+      <DependentUpon>Cashier_choice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientSpace.Designer.cs">
+      <DependentUpon>ClientSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Container.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Container.Designer.cs">
+      <DependentUpon>Container.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteProvider.Designer.cs">
+      <DependentUpon>DeleteProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteToy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteToy.Designer.cs">
+      <DependentUpon>DeleteToy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login_admin.Designer.cs">
+      <DependentUpon>Login_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login_cashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login_cashier.Designer.cs">
+      <DependentUpon>Login_cashier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyProvider.Designer.cs">
+      <DependentUpon>ModifyProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyToy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyToy.Designer.cs">
+      <DependentUpon>ModifyToy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\previousSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\previousSales.Designer.cs">
+      <DependentUpon>previousSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProviderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProviderList.Designer.cs">
+      <DependentUpon>ProviderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProviderManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProviderManagement.Designer.cs">
+      <DependentUpon>ProviderManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sell.Designer.cs">
+      <DependentUpon>Sell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SellCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SellCancel.Designer.cs">
+      <DependentUpon>SellCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subscription.Designer.cs">
+      <DependentUpon>Subscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ToyList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToyList.Designer.cs">
+      <DependentUpon>ToyList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ToysManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToysManagement.Designer.cs">
+      <DependentUpon>ToysManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Catalog.resx" />
+    <EmbeddedResource Include="Forms\AddProvider.resx">
+      <DependentUpon>AddProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddToy.resx">
+      <DependentUpon>AddToy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminChoice.resx">
+      <DependentUpon>AdminChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BestCashier.resx">
+      <DependentUpon>BestCashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculator.resx">
+      <DependentUpon>Calculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cashier_choice.resx">
+      <DependentUpon>Cashier_choice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientSpace.resx">
+      <DependentUpon>ClientSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Container.resx">
+      <DependentUpon>Container.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteProvider.resx">
+      <DependentUpon>DeleteProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteToy.resx">
+      <DependentUpon>DeleteToy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login_admin.resx">
+      <DependentUpon>Login_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login_cashier.resx">
+      <DependentUpon>Login_cashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyProvider.resx">
+      <DependentUpon>ModifyProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyToy.resx">
+      <DependentUpon>ModifyToy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\previousSales.resx">
+      <DependentUpon>previousSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProviderList.resx">
+      <DependentUpon>ProviderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProviderManagement.resx">
+      <DependentUpon>ProviderManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sell.resx">
+      <DependentUpon>Sell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SellCancel.resx">
+      <DependentUpon>SellCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subscription.resx">
+      <DependentUpon>Subscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToyList.resx">
+      <DependentUpon>ToyList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToysManagement.resx">
+      <DependentUpon>ToysManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\360_F_295671130_iR0BG3MsTDibW9jFhZ0xkRxpKNgLKAvt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\333917.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\connectBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
