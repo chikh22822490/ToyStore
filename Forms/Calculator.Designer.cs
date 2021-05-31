@@ -43,10 +43,10 @@ namespace ToyStore.Forms
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.bt_glob = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -125,24 +125,6 @@ namespace ToyStore.Forms
             this.panel1.Size = new System.Drawing.Size(397, 538);
             this.panel1.TabIndex = 4;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel2.Controls.Add(this.bt_glob);
-            this.panel2.Location = new System.Drawing.Point(4, 54);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(397, 538);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Location = new System.Drawing.Point(791, 54);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(397, 538);
-            this.panel3.TabIndex = 6;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(128, 475);
@@ -152,6 +134,15 @@ namespace ToyStore.Forms
             this.button1.Text = "Turnover per type";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.Controls.Add(this.bt_glob);
+            this.panel2.Location = new System.Drawing.Point(4, 54);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(397, 538);
+            this.panel2.TabIndex = 5;
+            // 
             // bt_glob
             // 
             this.bt_glob.Location = new System.Drawing.Point(110, 475);
@@ -160,6 +151,15 @@ namespace ToyStore.Forms
             this.bt_glob.TabIndex = 1;
             this.bt_glob.Text = "Overall turnover";
             this.bt_glob.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Location = new System.Drawing.Point(791, 54);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(397, 538);
+            this.panel3.TabIndex = 6;
             // 
             // button3
             // 
@@ -199,6 +199,7 @@ namespace ToyStore.Forms
             this.Name = "Calculator";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();

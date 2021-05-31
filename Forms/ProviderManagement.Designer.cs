@@ -118,6 +118,7 @@ namespace ToyStore.Forms
             this.Name = "ProviderManagement";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Provider Management";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

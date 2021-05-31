@@ -202,7 +202,7 @@ namespace ToyStore.Forms
             this.Name = "AddProvider";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Provider";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.AddProvider_Load);

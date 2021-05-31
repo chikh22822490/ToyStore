@@ -187,6 +187,7 @@ namespace ToyStore.Forms
             this.Name = "AdminChoice";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AdminChoice";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AdminChoice_Load);

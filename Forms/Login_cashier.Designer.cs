@@ -124,6 +124,7 @@ namespace ToyStore.Forms
             this.Name = "Login_cashier";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login_cashier";
             this.Load += new System.EventHandler(this.Login_cashier_Load);
             this.panel1.ResumeLayout(false);
