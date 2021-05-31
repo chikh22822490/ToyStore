@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyStore", "ToyStore.csproj", "{CBEDA128-EA7D-4D55-8C38-B982A4EFF9A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBEDA128-EA7D-4D55-8C38-B982A4EFF9A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEDA128-EA7D-4D55-8C38-B982A4EFF9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEDA128-EA7D-4D55-8C38-B982A4EFF9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEDA128-EA7D-4D55-8C38-B982A4EFF9A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F785103-0F58-4FD3-B7AC-DA5DF8D147EE}
+	EndGlobalSection
+EndGlobal
