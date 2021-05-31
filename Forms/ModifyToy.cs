@@ -106,12 +106,14 @@ namespace ToyStore.Forms
                 
 
                     txt_nom.Text = reader.GetString(1);
-                    txt_prix.Text = reader.GetDouble(6).ToString();
                     cmb_type.Text = reader.GetString(2);
-                    txt_stock.Text = reader.GetInt32(8).ToString();
-                    txt_min.Value = reader.GetInt32(4);
                     txt_max.Value = reader.GetInt32(3);
+                    txt_min.Value = reader.GetInt32(4);
+                    txt_image.Text = reader.GetString(5);
+                    txt_prix.Text = reader.GetDouble(6).ToString();
                     id_prov = reader.GetInt32(7);
+                    txt_stock.Text = reader.GetInt32(8).ToString();
+                    
                 }
                 reader.Close();
 
